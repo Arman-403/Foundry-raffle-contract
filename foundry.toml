@@ -28,11 +28,7 @@ optimizer_runs = 200
 
 
 [profile.ci]
-fuzz = { runs = 128 }
 optimizer = false
 ffi = false
-
-
-
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
