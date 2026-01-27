@@ -10,27 +10,29 @@ env:
 
 jobs:
   check:
-    name: Foundry project
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
         with:
-          version: nightly
+          version: stable
 
       - name: Install dependencies
-        run: forge install
+        run: |
+          forge install
+          ls -la lib
 
-      - name: Show Forge version
+      - name: Forge version
         run: forge --version
 
-      - name: Run Forge fmt
+      - name: Format check
         run: forge fmt --check
 
-      - name: Run Forge build
+      - name: Build
         run: forge build --sizes
 
-      - name: Run Forge tests
+      - name: Test
         run: forge test -vvv
