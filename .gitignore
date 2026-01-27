@@ -12,7 +12,8 @@ docs/
 
 # Libraries
 lib/
-.gitmodules/
+
 
 # Dotenv file
 .env
+.gitmodules
